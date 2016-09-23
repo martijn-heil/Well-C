@@ -1,7 +1,12 @@
-#ifndef SERVER_H
-#define SERVER_H
+#ifndef WELL_SERVER_H
+#define WELL_SERVER_H
 
 #include <stdbool.h>
+#include <uuid/uuid.h>
+#include "well/world.h"
+#include "well/player.h"
+#include "well/offline_player.h"
+
 
 char *well_server_get_motd();
 
@@ -28,15 +33,27 @@ void well_server_restart(char *kick_message);
 void well_server_reload(bool announce, char *message);
 
 
-bool well_server_is_whitelisted();
-void well_server_set_whitelisted(bool value);
+char                      **well_server_get_ip_bans             (); // array of strings.
+bool                        well_server_is_online_mode          ();
+bool                        well_server_is_whitelisted          ();
+void                        well_server_set_whitelisted         (bool value);
+void                        well_server_get_idle_timeout        ();
+void                        well_server_set_idle_timeout        (int value);
+enum well_gamemode          well_server_get_default_gamemode    ();
+void                        well_server_set_default_gamemode    (enum well_gamemode gm);
+struct well_world          *well_server_get_worlds              ();
+struct well_world          *well_server_get_worldn              (char *name);
+struct well_world          *well_server_get_worldu              (uuid_t uuid);
+struct well_player         *well_server_get_playern             (char *name);
+struct well_player         *well_server_get_playeru             (uuid_t uuid);
+struct well_offline_player *well_server_get_offline_playern     (char *name);
+struct well_offline_player *well_server_get_offline_playeru     (uuid_t uuid);
 
-void well_server_get_idle_timeout();
-void well_server_set_idle_timeout();
 
-enum well_gamemode well_server_get_default_gamemode();
-void well_server_set_default_gamemode(enum well_gamemode gm);
+    #ifdef WELL_SERVER_SHORT_NAMES || WELL_SHORT_NAMES
 
 
+
+    #endif
 
 #endif
