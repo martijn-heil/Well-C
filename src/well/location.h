@@ -7,7 +7,7 @@ struct well_location {
     int z;
 };
 
-    #ifdef WELL_LOCATION_SHORT_NAMES || WELL_SHORT NAMES
+    #if defined(WELL_LOCATION_SHORT_NAMES) || defined(WELL_SHORT_NAMES)
 
         #define location well_location
 

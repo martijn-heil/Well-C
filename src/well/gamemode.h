@@ -8,7 +8,7 @@ enum well_gamemode {
     WELL_GAMEMODE_SPECTATOR = 3;
 };
 
-    #ifdef GAMEMODE_SHORT_NAMES || WELL_SHORT_NAMES
+    #if defined(GAMEMODE_SHORT_NAMES) || defined(WELL_SHORT_NAMES)
 
         #define gamemode well_gamemode
         #define GAMEMODE_SURVIVAL  WELL_GAMEMODE_SURVIVAL

@@ -7,7 +7,7 @@ struct well_offline_player {
     uuid_t uuid;
 };
 
-    #ifdef WELL_OFFLINE_PLAYER_SHORT_NAMES || WELL_SHORT_NAMES
+    #if defined(WELL_OFFLINE_PLAYER_SHORT_NAMES) || defined(WELL_SHORT_NAMES)
 
         #define offline_player well_offline_player
 

@@ -7,7 +7,7 @@ struct well_world {
     uuid_t uuid;
 };
 
-    #ifdef WELL_WORLD_SHORT_NAMES || WELL_SHORT_NAMES
+    #if defined(WELL_WORLD_SHORT_NAMES) || defined(WELL_SHORT_NAMES)
 
         #define world well_world
 
