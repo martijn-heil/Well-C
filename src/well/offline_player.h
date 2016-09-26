@@ -3,9 +3,8 @@
 
 #include <uuid/uuid.h>
 
-struct well_offline_player {
-    uuid_t uuid;
-};
+typedef struct well_offline_player well_offline_player;
+
 
     #if defined(WELL_OFFLINE_PLAYER_SHORT_NAMES) || defined(WELL_SHORT_NAMES)
 

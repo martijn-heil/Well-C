@@ -3,9 +3,7 @@
 
 #include <uuid/uuid.h>
 
-struct well_world {
-    uuid_t uuid;
-};
+typedef struct well_world well_world;
 
     #if defined(WELL_WORLD_SHORT_NAMES) || defined(WELL_SHORT_NAMES)
 

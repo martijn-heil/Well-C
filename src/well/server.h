@@ -41,13 +41,13 @@ void                        well_server_get_idle_timeout        (void);
 void                        well_server_set_idle_timeout        (int value);
 enum well_gamemode          well_server_get_default_gamemode    (void);
 void                        well_server_set_default_gamemode    (enum well_gamemode gm);
-struct well_world          *well_server_get_worlds              (void);
-struct well_world          *well_server_get_worldn              (char *name);
-struct well_world          *well_server_get_worldu              (uuid_t uuid);
-struct well_player         *well_server_get_playern             (char *name);
-struct well_player         *well_server_get_playeru             (uuid_t uuid);
-struct well_offline_player *well_server_get_offline_playern     (char *name);
-struct well_offline_player *well_server_get_offline_playeru     (uuid_t uuid);
+well_world                 *well_server_get_worlds              (void);
+well_world                 *well_server_get_worldn              (char *name);
+well_world                 *well_server_get_worldu              (uuid_t uuid);
+well_player                *well_server_get_playern             (char *name);
+well_player                *well_server_get_playeru             (uuid_t uuid);
+well_offline_player        *well_server_get_offline_playern     (char *name);
+well_offline_player        *well_server_get_offline_playeru     (uuid_t uuid);
 
 
     #if defined(WELL_SERVER_SHORT_NAMES) || defined(WELL_SHORT_NAMES)
