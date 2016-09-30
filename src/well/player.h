@@ -5,12 +5,13 @@
 #include <sys/socket.h>
 #include <uuid/uuid.h>
 #include "well/location.h"
+#include "well/gamemode.h"
 
 typedef struct well_player well_player;
 
 // Player methods.
 struct sockaddr        *well_player_get_address             (well_player *self);
-struct well_location   *well_player_get_bed_spawn_location  (well_player *self);
+well_location          *well_player_get_bed_spawn_location  (well_player *self);
 void                    well_player_set_bed_spawn_location  (well_player *self);
 bool                    well_player_get_allow_flight        (well_player *self);
 void                    well_player_set_allow_flight        (well_player *self, bool value);
@@ -32,6 +33,34 @@ void                    well_player_hide_from               (well_player *self, 
 void                    well_player_show_for                (well_player *self, well_player *other);
 void                    well_player_update_inventory        (well_player *self);
 void                    well_player_request_resource_pack   (well_player *self, char *url);
+
+// humanoid.
+enum well_gamemode      well_player_get_gamemode            (well_player *self);
+void                    well_player_set_gamemode            (well_player *self, enum well_gamemode gm);
+// TODO enderchest.
+int                     well_player_get_sleep_ticks         (well_player *self);
+bool                    well_player_is_sleeping             (well_player *self);
+bool                    well_player_is_blocking             (well_player *self);
+bool                    well_player_is_hand_raised          (well_player *self);
+int                     well_player_required_xp_to_lvl      (well_player *self);
+char                   *well_player_get_name                (well_player *self); // Note names can be changed, use UUID's for identification and storage.
+void                    well_player_close_inventory         (well_player *self);
+bool                    well_player_is_gliding              (well_player *self, bool value);
+void                    well_player_set_gliding             (well_player *self);
+bool                    well_player_is_collidable           (well_player *self);
+void                    well_player_set_collidable          (well_player *self, bool value);
+bool                    well_player_is_leashed              (well_player *self);
+void                    well_player_set_leashed             (well_player *self, bool value);
+bool                    well_player_has_ai                  (well_player *self);
+void                    well_player_set_ai                  (well_player *self, bool value);
+bool                    well_player_can_pickup_items        (well_player *self);
+void                    well_player_set_can_pickup_items    (well_player *self, bool value);
+unsigned int            well_player_get_maximum_air         (well_player *self);
+void                    well_player_set_maximum_air         (well_player *self, unsigned int value);
+unsigned int            well_player_get_remaining_air       (well_player *self);
+void                    well_player_set_remaining_air       (well_player *self, unsigned int value);
+double                  well_player_get_eye_heigth          (well_player *self);
+bool                    well_player_has_line_of_sight_to    (well_player *self);
 
 
 
