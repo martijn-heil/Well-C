@@ -4,14 +4,14 @@
 typedef struct well_plugin well_plugin;
 
 enum well_plugin_state {
-    LOADING(),
-    LOADED(),
+    LOADING,
+    LOADED,
 
-    ENABLING(),
-    ENABLED(),
+    ENABLING,
+    ENABLED,
 
-    DISABLING(),
-    DISABLED()
+    DISABLING,
+    DISABLED
 };
 
 enum well_plugin_state      well_plugin_get_state(well_plugin *self);
